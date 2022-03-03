@@ -2,15 +2,15 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: circleci/node:lastest
+      - image: circleci/node@2.0.2
     steps:
       - checkout
       - run: echo "npm installing..."
       - run: npm install
-      - Crun: npm run build
+      - run: npm run build
   test:
     docker:
-      - image: circle/node:lastest
+      - image: circleci/node@2.0.2
     steps:
       - checkout
       - run: echo "testing..."
