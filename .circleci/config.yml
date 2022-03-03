@@ -7,7 +7,7 @@ jobs:
       - checkout
       - run: echo "npm installing..."
       - run: npm install
-      - CI=true npm run build
+      - Crun: npm run build
   test:
     docker:
       - image: circle/node:lastest
@@ -21,6 +21,4 @@ workflows:
     build_and_test:
       jobs:
         - build
-        - test:
-          requires:
-            - build
+        - test
