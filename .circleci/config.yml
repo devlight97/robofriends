@@ -7,7 +7,7 @@ jobs:
       - checkout
       - run: echo "npm installing..."
       - run: npm install
-      - Crun: npm run build
+      - run: npm run build
   test:
     docker:
       - image: circle/node:lastest
