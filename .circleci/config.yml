@@ -14,21 +14,13 @@ jobs:
     steps:
       - checkout
       - run: echo "testing..."
-      - run: npm install
+      # - run: npm install
       - run: npm test
-  hithere:
-    docker:
-      - image: circle/node:lastest
-    steps:
-      - checkout
-      - run: echo "Hello..."
 
 workflows:
-  version: 2
-    build_test_and_lint:
+    build_and_test:
       jobs:
         - build
-        - hithere
         - test
           requires:
-            - hithere
+            - build
